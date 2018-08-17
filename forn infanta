@@ -1,0 +1,139 @@
+#pragma once
+#include "stdafx.h"
+#include "Form1.h"	
+using namespace ejemploform; 
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Summary for form2
+	/// </summary>
+	public ref class form2 : public System::Windows::Forms::Form
+	{
+	public:
+		form2(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		~form2()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  text_usuario;
+
+	private: System::Windows::Forms::Label^  text_contraseña;
+
+	private: System::Windows::Forms::TextBox^  txt_contraseña;
+
+	private: System::Windows::Forms::TextBox^  txt_usuario;
+
+	protected: 
+
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->text_usuario = (gcnew System::Windows::Forms::Label());
+			this->text_contraseña = (gcnew System::Windows::Forms::Label());
+			this->txt_contraseña = (gcnew System::Windows::Forms::TextBox());
+			this->txt_usuario = (gcnew System::Windows::Forms::TextBox());
+			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(197, 74);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &form2::button1_Click);
+			// 
+			// text_usuario
+			// 
+			this->text_usuario->AutoSize = true;
+			this->text_usuario->Location = System::Drawing::Point(26, 47);
+			this->text_usuario->Name = L"text_usuario";
+			this->text_usuario->Size = System::Drawing::Size(44, 13);
+			this->text_usuario->TabIndex = 1;
+			this->text_usuario->Text = L"usuario ";
+			this->text_usuario->Click += gcnew System::EventHandler(this, &form2::text_usuario_Click);
+			// 
+			// text_contraseña
+			// 
+			this->text_contraseña->AutoSize = true;
+			this->text_contraseña->Location = System::Drawing::Point(21, 105);
+			this->text_contraseña->Name = L"text_contraseña";
+			this->text_contraseña->Size = System::Drawing::Size(60, 13);
+			this->text_contraseña->TabIndex = 2;
+			this->text_contraseña->Text = L"contraseña";
+			this->text_contraseña->Click += gcnew System::EventHandler(this, &form2::label2_Click);
+			// 
+			// txt_contraseña
+			// 
+			this->txt_contraseña->Location = System::Drawing::Point(91, 107);
+			this->txt_contraseña->Name = L"txt_contraseña";
+			this->txt_contraseña->Size = System::Drawing::Size(100, 20);
+			this->txt_contraseña->TabIndex = 3;
+			// 
+			// txt_usuario
+			// 
+			this->txt_usuario->Location = System::Drawing::Point(89, 44);
+			this->txt_usuario->Name = L"txt_usuario";
+			this->txt_usuario->Size = System::Drawing::Size(100, 20);
+			this->txt_usuario->TabIndex = 4;
+			// 
+			// form2
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->txt_usuario);
+			this->Controls->Add(this->txt_contraseña);
+			this->Controls->Add(this->text_contraseña);
+			this->Controls->Add(this->text_usuario);
+			this->Controls->Add(this->button1);
+			this->Name = L"form2";
+			this->Text = L"form2";
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+	
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if((txt_usuario->Text!="ADMIN")&(txt_contraseña->Text!="1234")){
+				 MessageBox::Show("contraseña o usuario incorrecto","error de autentificacion",
+					 MessageBoXButtons::OK,MessageBoxIcom::Error);
+			 }else{
+				
+		 }
+};
+}
